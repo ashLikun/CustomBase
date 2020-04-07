@@ -28,7 +28,7 @@ dependencies {
     compileOnly fileTree(dir: 'libs', include: ['*.jar'])
     compileOnly rootProject.ext.designVersion
     compileOnly 'com.github.ashLikun.frame:supertoobar:3.0.0'
-    compileOnly 'com.github.ashLikun:CommonUtils:3.3.3'
+    compileOnly 'com.github.ashLikun:CommonUtils:+'
     compileOnly 'com.github.ashLikun:CircleProgressView:2.0.1'
     compileOnly 'com.github.ashLikun:CustomDialog:2.0.2'
     compileOnly 'com.github.ashLikun:LoadSwitch:2.0.3'

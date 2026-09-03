@@ -20,7 +20,7 @@ import com.ashlikun.loadswitch.LoadSwitchService;
 import com.ashlikun.loadswitch.OnLoadSwitchClick;
 import com.ashlikun.okhttputils.http.OkHttpUtils;
 import com.ashlikun.supertoobar.SuperToolBar;
-import com.ashlikun.utils.ui.StatusBarCompat;
+import com.ashlikun.utils.ui.status.StatusBarCompat;
 
 /**
  * @author　　: 李坤

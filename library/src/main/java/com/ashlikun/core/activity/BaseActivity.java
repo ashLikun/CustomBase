@@ -21,6 +21,7 @@ import com.ashlikun.loadswitch.OnLoadSwitchClick;
 import com.ashlikun.okhttputils.http.OkHttpUtils;
 import com.ashlikun.supertoobar.SuperToolBar;
 import com.ashlikun.utils.ui.status.StatusBarCompat;
+import com.ashlikun.utils.ui.status.StatusBarCompatKt;
 
 /**
  * @author　　: 李坤
@@ -51,7 +52,6 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseWin
      */
     public LoadSwitchService switchService = null;
     protected SuperToolBar toolbar;
-    protected StatusBarCompat statusBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,12 +82,11 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseWin
      */
     protected void setStatueBar() {
         if (isStatusBarEnable()) {
-            statusBar = new StatusBarCompat(this);
             //设置状态栏颜色兼容,默认只是颜色
             if (isStatusTranslucent() || isStatusTranslucentAndroidMHalf()) {
-                statusBar.translucentStatusBar(isStatusTranslucentAndroidMHalf());
+                StatusBarCompatKt.setTransparentStatusBar(this, isStatusTranslucentAndroidMHalf(), StatusBarCompat.INSTANCE.isNotchFullscreen());
             } else {
-                statusBar.setStatusBarColor(getStatusBarColor());
+                StatusBarCompatKt.setStatusBarColor(this, getStatusBarColor(), StatusBarCompat.INSTANCE.isNotchFullscreen());
             }
         }
     }
@@ -122,7 +121,7 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseWin
     }
 
     public StatusBarCompat getStatusBar() {
-        return statusBar;
+        return StatusBarCompat.INSTANCE;
     }
 
     /**

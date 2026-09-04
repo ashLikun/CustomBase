@@ -93,7 +93,7 @@ public abstract class BaseFragment extends Fragment implements IBaseWindow, OnDi
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (rootView == null) {
             isRecycle = false;
-            rootView = UiUtils.getInflaterView(activity, getLayoutId());
+            rootView = inflater.inflate(getLayoutId(), null);
         } else {
             isRecycle = true;
             ViewGroup parent = (ViewGroup) rootView.getParent();
